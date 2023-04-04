@@ -1,3 +1,29 @@
-#main {
+/* .title {
+    color: #363636;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    text-align: center;
+} */
+
+#main-title {
+    padding: 4rem 4.5rem;
+}
+
+body {
+    background-color: #00d1b2;
     min-height: 100vh;
+}
+
+#drink-buttons {
+    margin-top: 1rem;
+    border-right: 0.25rem solid black;
+    border-top: 0.25rem solid black;
+}
+
+#meal-buttons {
+    margin-top: 1rem;
+    border-left: 0.25rem solid black;
+    border-top: 0.25rem solid black;
+    
 }
