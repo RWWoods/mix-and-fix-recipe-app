@@ -6,9 +6,26 @@ var cocktailIngredientInput = document.querySelector("#cocktail-ingredient-input
 
 var cocktailIngredientButton = document.querySelector("#cocktail-ingredient-button")
 
+var results = document.getElementById("results")
+
+
 
 function cocktailName(data) {
-    console.log(data)
+
+    for (var i = 0; i < data.drinks.length; i++) {
+        var drink= data.drinks[i];
+        var drinkName = drink.strDrink;
+
+        var drinkList = document.createElement("li")
+        drinkList.textContent = drinkName;
+        results.appendChild(drinkList)
+    }
+
+
+
+
+
+ console.log(data)
 }
 
 function cocktailNameFetch (name) {
@@ -25,7 +42,7 @@ function cocktailNameFetch (name) {
   });
 
 
-
+///////////////////////////////////////////////////////////////////
 
   function cocktailIngredient(data) {
     console.log(data)
