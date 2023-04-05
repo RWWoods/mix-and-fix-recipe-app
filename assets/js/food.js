@@ -10,6 +10,15 @@ var results = document.getElementById("results")
 
 function dishName(data) {
 
+    for (var i = 0; i < data.meals,length; i++) {
+        var meal= data.meals[i];
+        var mealName = meal.strMeal;
+
+        var mealList = document.createElement("li")
+        mealList.textContent = mealName;
+        results.appendChild(mealList)
+    }
+
     console.log(data)
 }
 
