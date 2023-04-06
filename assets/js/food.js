@@ -81,7 +81,8 @@ function createRecipebyName(mealButton, data) {
     dishNameButton.addEventListener("click", function (event) {
         if (dishNameInput.value !== "") {
             dishNameFetch(dishNameInput.value)
-        }
+        };
+        results.innerHTML= " ";
     });
 
 
@@ -111,6 +112,7 @@ function createRecipebyName(mealButton, data) {
 
 
     dishIngredientButton.addEventListener("click", function (event) {
-        dishIngredientFetch(dishIngredientInput.value)
+        dishIngredientFetch(dishIngredientInput.value);
+        results.innerHTML= " ";
     });
     

@@ -44,8 +44,9 @@ body {
 }
 
 .drinkButtons {
-    background-color:#00d1b2;
+    background-color: grey;
+    border-color: white;
     color: white;
-    border-radius: 16px;
+    border-radius: 50px;
 
 }
