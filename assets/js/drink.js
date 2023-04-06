@@ -19,16 +19,9 @@ function cocktailName(data) {
         var drinkName = drink.strDrink;
 
         var drinkList = document.createElement("button");
+        drinkList.setAttribute("class", "drinkButtons")
         drinkList.textContent = drinkName;
-        results.appendChild(drinkList);
-
-        drinkList.addEventListener("click", function(event) {
-          event.preventDefault();
-          var drinkButton= event.target.textContent
-          console.log(event.target)
-          createRecipebyName (drinkButton, data);
-          
-        });  
+        results.appendChild(drinkList);  
 
     };
 
@@ -99,19 +92,34 @@ function cocktailNameFetch (name) {
 ///////////////////////////////////////////////////////////////////
 
   // This function displays a list of drink names based on the ingredient the user inputs. 
+
+
   function cocktailIngredient(data) {
     
     for (var i = 0; i < data.drinks.length; i++) {
         var drinkbyIngredient= data.drinks[i];
         var ingredients = drinkbyIngredient.strDrink;
 
-        var optionList = document.createElement("li")
+        var optionList = document.createElement("button")
         optionList.textContent = ingredients;
         results.appendChild(optionList);
+
+        optionList.addEventListener("click", function(event) {
+          event.preventDefault();
+          var drinkButton= event.target.textContent
+          console.log(event.target)
+          createRecipebyName (drinkButton, data);
+        
+        }); 
     };
 
     console.log(data)
-} 
+};
+
+// function createRecipebyIngredient (ingredientButton, data) {
+//   for (var i = 0; i < data.drinks.length; i++) {
+
+// };
 // This function is the fetch request for the "Search by Ingredient" option. It calls the cocktailIngredient function.
 function cocktailIngredientFetch (ingredient) {
     fetch("https://thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient).then(function(response){
