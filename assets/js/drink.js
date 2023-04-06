@@ -20,19 +20,23 @@ function cocktailName(data) {
         var drinkList = document.createElement("button");
         drinkList.textContent = drinkName;
         results.appendChild(drinkList);
+
+        drinkList.addEventListener("click", function(event) {
+          createRecipebyName(data)
+        }); 
     };
 
  console.log(data);
 };
 
 function createRecipebyName (data) {
-
-    drinkList.setAttribute("hidden", true);
+    
 
     for (var i = 0; i < data.drinks.length; i++) {
         var drink2 = data.drinks[i];
         var glass = drink2.strGlass
-        var ingredients = drink2.strIngredient1 + drink2.strIngredient2 + drink2.stringredient3 + drink2.strIngredient4;
+        var ingredients = drink2.strIngredient1 + " " + drink2.strIngredient2 + " " 
+        + drink2.strIngredient3 + " " + drink2.strIngredient4;
         var measure = drink2.strMeasure1 + drink2.strMeasure2 + drink2.strMeasure3
         var instructions = drink2.strInstructions;
 
@@ -46,10 +50,6 @@ function createRecipebyName (data) {
 };
 
 
-// drinkList.addEventListener("click", function(event){
-//     createRecipebyName(drinkList.textContent)
-// }); 
-
 //This function is the fetch request for the "Search Cocktail by Name" option. It calls the cocktailName function.
 function cocktailNameFetch (name) {
     fetch("https://thecocktaildb.com/api/json/v1/1/search.php?s=" + name).then(function(response){
@@ -57,18 +57,15 @@ function cocktailNameFetch (name) {
     }).then(function(data){
       cocktailName(data);
     });
-    // createRecipebyName(data);
+    createRecipebyName(data);
   };
 
 //This click event takes the user's input and calls the fetch request function based on said input. 
 
   cocktailNameButton.addEventListener("click", function(event){
+    if (cocktailNameInput.value !== "") {
     cocktailNameFetch(cocktailNameInput.value);
-
-    // figure out how to end function if there is no value
-    // if (cocktailNameInput.value === "") {
-    //     return;
-    // }
+}
   });
 
 
