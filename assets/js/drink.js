@@ -36,9 +36,16 @@ function createRecipebyName (data) {
         var drink2 = data.drinks[i];
         var glass = drink2.strGlass
         var ingredients = drink2.strIngredient1 + " " + drink2.strIngredient2 + " " 
-        + drink2.strIngredient3 + " " + drink2.strIngredient4;
+        + drink2.strIngredient3 + " " + drink2.strIngredient4 + " " + drink2.strIngredient5 +
+        " " + drink2.strIngredient6 + " " + drink2.strIngredient7 + " " + drink2.strIngredient8
+        + " " + drink2.strIngredient9 + " " + drink2.strIngredient10 + " " + drink2.strIngredient11
+        + " " + drink2.strIngredient12 + " " + drink2.strIngredient13 + " " + drink2.strIngredient14
+        + " " + drink2.strIngredient15;
+        // maybe create an array of ingredient list instead of one variable of each ingredient?
+        // maybe same logic for meaures ?
         var measure = drink2.strMeasure1 + drink2.strMeasure2 + drink2.strMeasure3
         var instructions = drink2.strInstructions;
+
 
         var recipe = glass + "  " + ingredients + "   " + measure + "  " + instructions;
 
