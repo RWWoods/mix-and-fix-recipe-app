@@ -21,10 +21,14 @@ function cocktailName(data) {
         drinkList.textContent = drinkName;
         results.appendChild(drinkList);
 
-        drinkList.addEventListener("click", function(event) {
-          createRecipebyName(data)
-        }); 
-    };
+    //     drinkList.addEventListener("click", function(event) {
+    //       var drinkButton = event.target;
+
+    //       if (drinkButton) {
+    //       createRecipebyName(data)
+    //       }
+    //     }); 
+    // };
 
  console.log(data);
 };
@@ -43,6 +47,11 @@ function createRecipebyName (data) {
         + " " + drink2.strIngredient15;
         // maybe create an array of ingredient list instead of one variable of each ingredient?
         // maybe same logic for meaures ?
+        if (ingredients[i] != null ) {
+          return ingredients;
+
+        };
+
         var measure = drink2.strMeasure1 + drink2.strMeasure2 + drink2.strMeasure3
         var instructions = drink2.strInstructions;
 
