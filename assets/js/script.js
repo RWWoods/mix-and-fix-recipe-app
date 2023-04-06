@@ -9,6 +9,7 @@ var drinkTile = document.querySelector("#drink-column");
 
 function randomMeal() {
     var requestUrl = "https://themealdb.com/api/json/v1/1/random.php"
+    localStorage.removeItem("lastMeal");
 
     fetch(requestUrl)
         .then(function (response) {
@@ -45,7 +46,7 @@ function luckyMeal(data) {
     var foodRecipe = "Meal Name: " + luckyMeal.strMeal + ". " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
 
     mealTile.textContent = foodRecipe;
-
+    localStorage.setItem("lastMeal", foodRecipe);
 }
 
 // randomMeal();
@@ -53,6 +54,7 @@ function luckyMeal(data) {
 
 function randomDrink() {
     var requestUrl = "https://thecocktaildb.com/api/json/v1/1/random.php"
+    localStorage.removeItem("lastDrink");
 
     fetch(requestUrl)
         .then(function (response) {
@@ -89,14 +91,11 @@ function luckyCocktail(data) {
     var recipe = "Cocktail Name: " + luckyDrink.strDrink + ". " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
 
     drinkTile.textContent = recipe;
+    localStorage.setItem("lastDrink", recipe);
 
 }
 
 
-
-
-
-// randomDrink();
 
 
 randomCocktailButton.addEventListener("click", function (event) {
@@ -111,3 +110,5 @@ randomFoodButton.addEventListener("click", function (event) {
 
 })
 
+drinkTile.textContent = localStorage.getItem("lastDrink");
+mealTile.textContent = localStorage.getItem("lastMeal");
