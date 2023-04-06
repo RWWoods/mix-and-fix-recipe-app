@@ -10,8 +10,8 @@ var results = document.getElementById("results")
 
 // This function displays the list of drink names the user can choose from based
 // on the array that is curated when they input the name of their drink.
-function cocktailName(data) {
 
+function cocktailName(data) {
     for (var i = 0; i < data.drinks.length; i++) {
         var drink= data.drinks[i];
         var drinkName = drink.strDrink;
@@ -88,7 +88,9 @@ function cocktailNameFetch (name) {
   cocktailNameButton.addEventListener("click", function(event){
     if (cocktailNameInput.value !== "") {
     cocktailNameFetch(cocktailNameInput.value);
-}
+    results.innerHTML= " ";
+};
+
   });
 
 
@@ -106,24 +108,12 @@ function cocktailNameFetch (name) {
 
         var optionList = document.createElement("button")
         optionList.textContent = ingredients;
-        results.appendChild(optionList);
-
-        optionList.addEventListener("click", function(event) {
-          event.preventDefault();
-          var drinkButton= event.target.textContent
-          console.log(event.target)
-          createRecipebyName (drinkButton, data);
-        
-        }); 
-    };
+        optionList.setAttribute("class", "drinkButtons");
+        results.appendChild(optionList);    
+      };
 
     console.log(data)
 };
-
-// function createRecipebyIngredient (ingredientButton, data) {
-//   for (var i = 0; i < data.drinks.length; i++) {
-
-// };
 // This function is the fetch request for the "Search by Ingredient" option. It calls the cocktailIngredient function.
 function cocktailIngredientFetch (ingredient) {
     fetch("https://thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient).then(function(response){
@@ -136,4 +126,5 @@ function cocktailIngredientFetch (ingredient) {
 // This click event takes the user's ingredient input and calls the fetch request function based on the user input.
   cocktailIngredientButton.addEventListener("click", function(event){
     cocktailIngredientFetch(cocktailIngredientInput.value)
+    results.innerHTML= " ";
   });
