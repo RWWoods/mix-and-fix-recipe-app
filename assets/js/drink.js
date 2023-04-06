@@ -21,14 +21,11 @@ function cocktailName(data) {
         drinkList.textContent = drinkName;
         results.appendChild(drinkList);
 
-    //     drinkList.addEventListener("click", function(event) {
-    //       var drinkButton = event.target;
-
-    //       if (drinkButton) {
-    //       createRecipebyName(data)
-    //       }
-    //     }); 
-    // };
+        drinkList.addEventListener("click", function(event) {
+          createRecipebyName (data);
+          
+        }); 
+    };
 
  console.log(data);
 };
