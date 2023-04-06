@@ -43,6 +43,22 @@ body {
     margin-left: 10px;
 }
 
+#left-column {
+    margin-top: 1rem;
+    border: 0.25rem solid black;
+    border-radius: 25px;
+    margin-left: 10px;
+    display: hidden;
+}
+
+#right-column {
+    margin-top: 1rem;
+    border: 0.25rem solid black;
+    border-radius: 25px;
+    margin-left: 10px;
+    display: hidden;
+}
+
 .drinkButtons {
     background-color:#00d1b2;
     color: white;
