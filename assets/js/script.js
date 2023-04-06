@@ -1,21 +1,34 @@
+var luckyCocktail = function (stuff) {
+    for (var i = 0; i < stuff.length; i++) {
+        console.log(stuff);
+        
+    }
+}
+
 function randomDrink() {
 var requestUrl = "https://thecocktaildb.com/api/json/v1/1/random.php"
+
 fetch(requestUrl)
 .then(function (response) {
     return response.json();
 }).then(function(data) {
-    cocktailName(data);
+    console.log(data);
+    luckyCocktail(data);
 })
 
 }
 
-var randomCocktailButton = document.querySelector("#luckyCocktail")
 
-randomCocktailButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    document.location.assign('./drink.html')
-    results.appendChild("Hello");
-})
+
+randomDrink();
+
+// var randomCocktailButton = document.querySelector("#luckyCocktail")
+
+// randomCocktailButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     document.location.assign('./drink.html')
+//     results.appendChild("Hello");
+// })
 
 // function cocktailName(data) {
 
@@ -35,3 +48,10 @@ randomCocktailButton.addEventListener("click", function(event) {
 //         }); 
 //     };
 // }
+
+
+// var homeButton = document.querySelector()
+// homeButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     document.location.assign('./index.html')
+// })

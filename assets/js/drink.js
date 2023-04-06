@@ -118,35 +118,8 @@ function cocktailIngredientFetch (ingredient) {
   });
 
 
-  // fetch(requestUrl)
-  // .then(function (response) {
-  //   return response.json();
-  // })
-  // .then(function (data) {
-  //   for (var i = 0; i < data.length; i++) {
-  //     var listItem = document.createElement('li');
-  //     listItem.textContent = data[i].html_url;
-  //     repoList.appendChild(listItem);
-  //   }
-  // });
-
-
-  function getApi() {
-
-    var requestUrl = 'https://thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
-
-  fetch(requestUrl)
-  .then(function (response) {
-    return response.json(); })
-    .then(function(data) {
-      for (var i = 0; i < data.length; i++) {
-        var listItem = document.createElement('li');
-        
-        listItem.innerHTML = data[i].idDrink;
-        recipeList.appendChild(listItem);
-      }
-      console.log(data[i]);
-    })
-  }
-
-  cocktailNameButton.addEventListener('click', getApi);
+var homeButton = document.querySelector("#home")
+homeButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    document.location.assign('./index.html')
+})
