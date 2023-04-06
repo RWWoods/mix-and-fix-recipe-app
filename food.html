@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D</title>
+    <title>Mix & Fix Meal Search</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <section class="hero is-primary is-medium pb-2">
+    <section class="hero is-primary is-medium pt-4 pb-2">
     <div class="hero-head">
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
-                <h1>Choose for Food</h1>
+                <h1 class="is-size-1">Choose for Food</h1>
               <span class="navbar-burger" data-target="navbarMenuHeroA">
                 <span></span>
                 <span></span>
@@ -25,14 +25,14 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item">
+                <a class="navbar-item" href="./index.html">
                   Home
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="./drink.html">
                   Cocktails
                 </a>
-                <a class="navbar-item is-active">
-                  Foods
+                <a class="navbar-item is-active" href="./food.html">
+                  Meals
                 </a>
                 <span class="navbar-item">
                   <a class="button is-primary is-inverted">
@@ -50,17 +50,20 @@
 </section>
 
 
-    <div class="tile is-ancestor mt-6">
+    <div class="tile is-ancestor mt-6 mx-4">
         <div class="tile is-4 is-vertical is-parent">
           <div class="tile is-child box has-background-info">
             <p class="title has-text-white">Browse by Name</p>
+
             <input class="input is-large" id= "dish-name-input" type="text" placeholder="Name here">
             <button class="button" id="dish-name-button">Search</button>
           </div>
+          
           <div class="tile is-child box has-background-info">
             <p class="title has-text-white">Browse by Ingredient</p>
             <input class="input is-large" id="dish-ingredient-input"type="text" placeholder="Ingredient here">
             <button class="button" id="dish-ingredient-button">Search</button>
+
           </div>
         </div>
         <div class="tile is-parent">
