@@ -24,7 +24,9 @@ function cocktailName(data) {
         results.appendChild(drinkList);
 
         drinkList.addEventListener("click", function(event) {
+          event.preventDefault;
           createRecipebyName (data);
+          // console.log(data);
           
         }); 
     };
