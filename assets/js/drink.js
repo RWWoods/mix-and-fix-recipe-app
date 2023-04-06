@@ -10,7 +10,6 @@ var results = document.getElementById("results")
 
 // This function displays the list of drink names the user can choose from based
 // on the array that is curated when they input the name of their drink.
-
 function cocktailName(data) {
 
     for (var i = 0; i < data.drinks.length; i++) {
@@ -22,42 +21,55 @@ function cocktailName(data) {
         results.appendChild(drinkList);
 
         drinkList.addEventListener("click", function(event) {
-          createRecipebyName (data);
+          event.preventDefault();
+          var drinkButton= event.target.textContent
+          console.log(event.target)
+          createRecipebyName (drinkButton, data);
           
-        }); 
+        });  
+
     };
+
 
  console.log(data);
 };
 
-function createRecipebyName (data) {
+function createRecipebyName (drinkButton, data) {
     
 
     for (var i = 0; i < data.drinks.length; i++) {
+      if (drinkButton === data.drinks[i].strDrink) {
         var drink2 = data.drinks[i];
         var glass = drink2.strGlass
-        var ingredients = drink2.strIngredient1 + " " + drink2.strIngredient2 + " " 
-        + drink2.strIngredient3 + " " + drink2.strIngredient4 + " " + drink2.strIngredient5 +
-        " " + drink2.strIngredient6 + " " + drink2.strIngredient7 + " " + drink2.strIngredient8
-        + " " + drink2.strIngredient9 + " " + drink2.strIngredient10 + " " + drink2.strIngredient11
-        + " " + drink2.strIngredient12 + " " + drink2.strIngredient13 + " " + drink2.strIngredient14
-        + " " + drink2.strIngredient15;
-        // maybe create an array of ingredient list instead of one variable of each ingredient?
-        // maybe same logic for meaures ?
-        if (ingredients[i] != null ) {
-          return ingredients;
+        var ingredients = [drink2.strIngredient1, drink2.strIngredient2, drink2.strIngredient3,
+         drink2.strIngredient4, drink2.strIngredient5, drink2.strIngredient6, drink2.strIngredient7, 
+         drink2.strIngredient8, drink2.strIngredient9, drink2.strIngredient10, drink2.strIngredient11, 
+         drink2.strIngredient12, drink2.strIngredient13, drink2.strIngredient14, drink2.strIngredient15]
+         
+         ingredients= ingredients.filter(function(element){
+          return element != null
+         });
+          
+  
 
-        };
+        var measure = [drink2.strMeasure1, drink2.strMeasure2, drink2.strMeasure3, drink2.strMeasure4,
+        drink2.strMeasure5, drink2.strMeasure6, drink2.strMeasure7, drink2.strMeasure8, drink2.strMeasure9,
+        drink2.strMeasure10, drink2.strMeasure11,drink2.strMeasure12, drink2.strMeasure13, drink2.strMeasure14,drink2.strMeasure15]
 
-        var measure = drink2.strMeasure1 + drink2.strMeasure2 + drink2.strMeasure3
+        measure = measure.filter(function(element){
+          return element != null
+         }); 
+
         var instructions = drink2.strInstructions;
 
 
-        var recipe = glass + "  " + ingredients + "   " + measure + "  " + instructions;
+
+            console.log(ingredients)
+        var recipe = glass + ".  " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
 
         var createRecipe = document.createElement("li")
         createRecipe.textContent = recipe;
-        results.appendChild(createRecipe);
+        results.appendChild(createRecipe); };
     }
     console.log(data)
 };
@@ -69,9 +81,8 @@ function cocktailNameFetch (name) {
       return response.json()
     }).then(function(data){
       cocktailName(data);
-    });
-    createRecipebyName(data);
-  };
+  });
+};
 
 //This click event takes the user's input and calls the fetch request function based on said input. 
 
