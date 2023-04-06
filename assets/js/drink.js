@@ -23,6 +23,12 @@ function cocktailName(data) {
         drinkList.textContent = drinkName;
         results.appendChild(drinkList);  
 
+        drinkList.addEventListener("click", function (event) {
+          event.preventDefault();
+          var drinkButton= event.target.textContent
+        console.log(event.target)
+          createRecipebyName(drinkButton, data);
+      });
     };
 
 
