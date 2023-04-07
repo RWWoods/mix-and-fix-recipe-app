@@ -49,7 +49,7 @@ function luckyMeal(data) {
     localStorage.setItem("lastMeal", foodRecipe);
 }
 
-// randomMeal();
+
 
 
 function randomDrink() {
