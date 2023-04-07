@@ -43,7 +43,7 @@ body {
     margin-left: 10px;
 }
 
-#left-column {
+#drink-column {
     margin-top: 1rem;
     border: 0.25rem solid black;
     border-radius: 25px;
@@ -51,7 +51,7 @@ body {
     display: hidden;
 }
 
-#right-column {
+#food-column {
     margin-top: 1rem;
     border: 0.25rem solid black;
     border-radius: 25px;
