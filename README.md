@@ -1,1 +1,3 @@
-# cocktail-dinner-recipes
+<Mix-and-Fix>
+
+We’ve created a web application that offers recipes for homemade meals and handmade cocktails.  It targets individuals and families that are tired of searching through countless websites and cookbooks looking for the perfect dinner and after dinner drink.  As a team, we acknowledged the importance of information on the go at the touch of a button.  As career driven individuals and families seem to have less free time than ever, our goal is to provide simple, easy to understand recipes of timeless classics and modern marvels.  Collectively, this entire project has been a learning process of sorts.  Collaborating via zoom has its benefits and detriments and the merging of repository branches is a separate challenge that will become easier with time and experience.    
