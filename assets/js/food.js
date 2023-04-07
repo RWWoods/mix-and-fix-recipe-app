@@ -64,7 +64,7 @@ function createRecipebyName(mealButton, data) {
             createRecipe.setAttribute("class", "drinkButtons")
             results.appendChild(createRecipe);
 
-            // localStorage.setItem("lastMealRecipe", createRecipe)
+            localStorage.setItem("lastMealRecipe", recipe)
         
         console.log(data)
     };
@@ -72,7 +72,7 @@ function createRecipebyName(mealButton, data) {
 };
 
     function dishNameFetch(name) {
-        // localStorage.removeItem("lastMealRecipe")
+         localStorage.removeItem("lastMealRecipe")
         fetch("https://themealdb.com/api/json/v1/1/search.php?s=" + name).then(function (response) {
             return response.json()
         }).then(function (data) {
@@ -119,4 +119,4 @@ function createRecipebyName(mealButton, data) {
         dishIngredientFetch(dishIngredientInput.value);
         results.innerHTML= " ";
     });
-    // results.textContent = localStorage.getItem("lastMealRecipe");
+    results.textContent = localStorage.getItem("lastMealRecipe");
