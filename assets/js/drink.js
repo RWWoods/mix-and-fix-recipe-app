@@ -74,7 +74,7 @@ function createRecipebyName (drinkButton, data) {
         createRecipe.setAttribute("class", "drinkButtons");
         results.appendChild(createRecipe); };
 
-        // localStorage.setItem("lastCocktail", createRecipe)
+         localStorage.setItem("lastCocktail", recipe)
     }
     console.log(data)
 };
@@ -82,7 +82,7 @@ function createRecipebyName (drinkButton, data) {
 
 //This function is the fetch request for the "Search Cocktail by Name" option. It calls the cocktailName function.
 function cocktailNameFetch (name) {
-  // localStorage.removeItem("lastCocktail")
+   localStorage.removeItem("lastCocktail")
     fetch("https://thecocktaildb.com/api/json/v1/1/search.php?s=" + name).then(function(response){
       return response.json()
     }).then(function(data){
@@ -136,4 +136,4 @@ function cocktailIngredientFetch (ingredient) {
     results.innerHTML= " ";
   });
 
-  // results.textContent = localStorage.getItem("lastCocktail");
+  results.textContent = localStorage.getItem("lastCocktail");
