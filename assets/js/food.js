@@ -35,7 +35,6 @@ function createRecipebyName(mealButton, data) {
     for (var i = 0; i < data.meals.length; i++) {
         if (mealButton === data.meals[i].strMeal) {
             var meal2 = data.meals[i];
-            var glass = meal2.strGlass
             var ingredients = [meal2.strIngredient1, meal2.strIngredient2, meal2.strIngredient3,
             meal2.strIngredient4, meal2.strIngredient5, meal2.strIngredient6, meal2.strIngredient7,
             meal2.strIngredient8, meal2.strIngredient9,
@@ -58,11 +57,14 @@ function createRecipebyName(mealButton, data) {
             var instructions = meal2.strInstructions;
 
             console.log(ingredients)
-            var recipe = glass + ".  " + ingredients.join(",  ") + ". " + measure.join(", ") + ".  " + instructions;
+            var recipe = "Ingredients: " + ingredients.join(",  ") + ". " + "Measurements by Ingredient: " + measure.join(", ") + ".  " + "Instructions: " +  instructions;
 
             var createRecipe = document.createElement("li")
             createRecipe.textContent = recipe;
+            createRecipe.setAttribute("class", "drinkButtons")
             results.appendChild(createRecipe);
+
+            // localStorage.setItem("lastMealRecipe", createRecipe)
         
         console.log(data)
     };
@@ -70,6 +72,7 @@ function createRecipebyName(mealButton, data) {
 };
 
     function dishNameFetch(name) {
+        // localStorage.removeItem("lastMealRecipe")
         fetch("https://themealdb.com/api/json/v1/1/search.php?s=" + name).then(function (response) {
             return response.json()
         }).then(function (data) {
@@ -116,4 +119,4 @@ function createRecipebyName(mealButton, data) {
         dishIngredientFetch(dishIngredientInput.value);
         results.innerHTML= " ";
     });
-    
+    // results.textContent = localStorage.getItem("lastMealRecipe");

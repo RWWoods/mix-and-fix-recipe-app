@@ -43,7 +43,8 @@ function luckyMeal(data) {
     });
 
     var instructions = luckyMeal.strInstructions;
-    var foodRecipe = "Meal Name: " + luckyMeal.strMeal + ". " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
+    var foodRecipe = "Meal Name: " + luckyMeal.strMeal + ". " + "Ingredients: " + ingredients.join(", ") + ". " +
+    "Measurements: " + measure.join(", ") + ". " + "Instructions: " + instructions;
 
     mealTile.textContent = foodRecipe;
     localStorage.setItem("lastMeal", foodRecipe);
@@ -88,7 +89,8 @@ function luckyCocktail(data) {
     });
 
     var instructions = luckyDrink.strInstructions;
-    var recipe = "Cocktail Name: " + luckyDrink.strDrink + ". " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
+    var recipe = "Cocktail Name: " + luckyDrink.strDrink + ". " + "Ingredients: " + ingredients.join(", ") + ". " + "Measurements: " + measure.join(", ") + ". " 
+    + "Instructions: " + instructions;
 
     drinkTile.textContent = recipe;
     localStorage.setItem("lastDrink", recipe);
