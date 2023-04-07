@@ -1,3 +1,5 @@
+var APIkey = "1";
+
 var cocktailNameInput= document.querySelector("#cocktail-name-input")
 
 var cocktailNameButton = document.querySelector("#cocktail-name-button")

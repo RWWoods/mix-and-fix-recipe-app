@@ -17,7 +17,7 @@ function dishName(data) {
         var mealList = document.createElement("button")
         mealList.textContent = mealName;
         results.appendChild(mealList);
-
+        mealList.setAttribute("class", "drinkButtons")
         mealList.addEventListener("click", function (event) {
             event.preventDefault();
             var mealButton= event.target.textContent
@@ -95,6 +95,7 @@ function createRecipebyName(mealButton, data) {
 
             var optionList = document.createElement("button")
             optionList.textContent = ingredients;
+            optionList.setAttribute("class", "drinkButtons");
             results.appendChild(optionList);
 
         };
