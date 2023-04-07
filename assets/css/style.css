@@ -43,10 +43,16 @@ body {
     margin-left: 10px;
 }
 
-.drinkButtons {
-    background-color: grey;
-    border-color: white;
-    color: white;
-    border-radius: 50px;
+#drink-column {
+    margin-top: 1rem;
+    border: 0.25rem solid black;
+    border-radius: 25px;
+    margin-left: 10px;
+}
 
+#food-column {
+    margin-top: 1rem;
+    border: 0.25rem solid black;
+    border-radius: 25px;
+    margin-left: 10px;
 }
