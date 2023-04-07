@@ -6,6 +6,10 @@ var mealTile = document.querySelector("#food-column");
 
 var drinkTile = document.querySelector("#drink-column");
 
+var drinkButton = document.querySelector('#drinkButton')
+
+var mealButton = document.querySelector("#mealButton")
+
 
 function randomMeal() {
     var requestUrl = "https://themealdb.com/api/json/v1/1/random.php"
@@ -97,8 +101,15 @@ function luckyCocktail(data) {
 
 }
 
+drinkButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    document.location.assign('./drink.html')
+})
 
-
+mealButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    document.location.assign('./food.html')
+})
 
 randomCocktailButton.addEventListener("click", function (event) {
     event.stopImmediatePropagation();
