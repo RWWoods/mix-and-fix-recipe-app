@@ -66,11 +66,15 @@ function createRecipebyName (drinkButton, data) {
 
 
             console.log(ingredients)
-        var recipe = glass + ".  " + ingredients.join(", ") + ". " + measure.join(", ") + ". " + instructions;
+        var recipe = "Glass Type: " + glass + ".  " + "Ingredients :" + ingredients.join(", ") + ". " +
+        "Measurements by Ingredients: " + measure.join(", ") + ". " + "Instructions: " + instructions;
 
         var createRecipe = document.createElement("li")
         createRecipe.textContent = recipe;
+        createRecipe.setAttribute("class", "drinkButtons");
         results.appendChild(createRecipe); };
+
+        // localStorage.setItem("lastCocktail", createRecipe)
     }
     console.log(data)
 };
@@ -78,6 +82,7 @@ function createRecipebyName (drinkButton, data) {
 
 //This function is the fetch request for the "Search Cocktail by Name" option. It calls the cocktailName function.
 function cocktailNameFetch (name) {
+  // localStorage.removeItem("lastCocktail")
     fetch("https://thecocktaildb.com/api/json/v1/1/search.php?s=" + name).then(function(response){
       return response.json()
     }).then(function(data){
@@ -111,7 +116,7 @@ function cocktailNameFetch (name) {
         var optionList = document.createElement("button")
         optionList.textContent = ingredients;
         optionList.setAttribute("class", "drinkButtons");
-        results.appendChild(optionList);    
+        results.appendChild(optionList);   
       };
 
     console.log(data)
@@ -130,3 +135,5 @@ function cocktailIngredientFetch (ingredient) {
     cocktailIngredientFetch(cocktailIngredientInput.value)
     results.innerHTML= " ";
   });
+
+  // results.textContent = localStorage.getItem("lastCocktail");

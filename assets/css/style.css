@@ -56,3 +56,9 @@ body {
     border-radius: 25px;
     margin-left: 10px;
 }
+
+.drinkButtons {
+    background-color: grey;
+    color: white;
+    border-radius: 20px;
+}
